@@ -5,6 +5,14 @@
 
 import requests
 from urllib.parse import unquote
+#import argparse
+
+
+#parser = argparse.ArgumentParser(prog="yande.re-downloader", description="Download images from yande.re")
+#parser.add_argument("input file", type=path, help="a file from witch URLs can be taken")
+#parser.add_argument(["-w","--wait"], type=int, default=3, help="number of seconds to wait between #operations")
+#args = parser.parse_args()
+
 
 
 def get_urls_from_file(input_file):
