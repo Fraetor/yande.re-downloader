@@ -11,4 +11,4 @@ https://yande.re/post/show/000004
 https://yande.re/post/show/000005
 ```
 
-Then just run the script with python3 yande.re_downloader.py
+Then just run the script with `python3 yande.re_downloader.py`
