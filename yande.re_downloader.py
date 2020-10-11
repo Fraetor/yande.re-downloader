@@ -49,7 +49,8 @@ def get_image_url(html_page):
 
 def download_image(image_url):
 	r = requests.get(image_url)
-	print(r.status_code)
+	if r.status_code != 200:
+		print(r.status_code)
 	filename = unquote(image_url.split('/')[-1])
 	with open(filename,'wb') as output_file:
 		output_file.write(r.content)
