@@ -6,6 +6,8 @@
 import requests
 from urllib.parse import unquote
 import time
+
+from requests.models import HTTPError
 #import argparse
 
 
@@ -48,12 +50,14 @@ def get_image_url(html_page):
 
 
 def download_image(image_url):
-	r = requests.get(image_url)
-	if r.status_code != 200:
-		print(r.status_code)
-	filename = unquote(image_url.split('/')[-1])
-	with open(filename,'wb') as output_file:
-		output_file.write(r.content)
+	try:
+		r = requests.get(image_url)
+		r.raise_for_status()
+		filename = unquote(image_url.split('/')[-1])
+		with open(filename,'wb') as output_file:
+			output_file.write(r.content)
+	except HTTPError:
+		print("HTTP error: Status code {0} from {1}".format(r.status_code, r.url))
 	print("Downloaded!")
 	time.sleep(3)
 
