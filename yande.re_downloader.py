@@ -58,6 +58,8 @@ def download_image(image_url):
 			output_file.write(r.content)
 	except HTTPError:
 		print("HTTP error: Status code {0} from {1}".format(r.status_code, r.url))
+	except:
+		print("An unknown issue occurred with URL {}".format(r.url))
 	print("Downloaded!")
 	time.sleep(3)
 
