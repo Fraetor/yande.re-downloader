@@ -46,6 +46,8 @@ def get_image_url(html_page):
 		if 'http' in part:
 			image_url = part
 	print(image_url)
+	if image_url[0] != 'h':
+		image_url = "http://notarealaddress-darnthesedomainregistrars-sdfgihubnasdijklufaws.com/thiswillbreakifthisexists.iso"
 	return image_url
 
 
