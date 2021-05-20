@@ -47,7 +47,7 @@ def get_image_url(html_page):
 			image_url = part
 	print(image_url)
 	if image_url[0] != 'h':
-		image_url = "http://notarealaddress-darnthesedomainregistrars-sdfgihubnasdijklufaws.com/thiswillbreakifthisexists.iso"
+		image_url = "https://frost.cx/aholuiefswvofhsrugreg/notarealpage.bz2"
 	return image_url
 
 
