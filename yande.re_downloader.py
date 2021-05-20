@@ -20,7 +20,7 @@ from requests.models import HTTPError
 
 def get_urls_from_file(input_file):
 	with open("download") as f:
-		return f.readlines()
+		return [line.strip() for line in f.readlines() if line[0] == 'h']
 
 
 def get_page_html(page_url):
