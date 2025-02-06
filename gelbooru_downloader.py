@@ -18,7 +18,7 @@ import time
 
 def get_urls_from_file(input_file):
 	with open("download") as f:
-		return f.readlines()
+		return [line if line.startswith("https://gelbooru.com/") in (l.strip() for l in f.readlines())]
 
 
 def get_page_html(page_url):
@@ -35,8 +35,6 @@ def get_image_url(html_page):
 		for subline in line.split("<li>"):
 			if 'Original image' in subline:
 				raw_image_url = subline
-				#print(raw_image_url)
-				#input("ENTER to continue.")
 	image_url = raw_image_url.split(" ")
 	for part in image_url:
 		if 'href=' in part:
